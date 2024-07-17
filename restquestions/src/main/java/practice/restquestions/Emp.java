@@ -1,9 +1,10 @@
 package practice.restquestions;
 
 public class Emp {
-	private int id;
-	private  String name;
-	private double sal;
+	protected int id;
+	protected  String name;
+	protected double sal;
+	protected String company = "CyberSolve";
 	
 	public Emp(int id, String name, double sal) { 
 		this.id = id;

@@ -76,7 +76,7 @@ public class StringManipulation {
     }
 
     
-    // -> Not working 
+    
     @GET
     @Path("vowelindexes")
     @Produces(MediaType.TEXT_PLAIN)
@@ -117,4 +117,22 @@ public class StringManipulation {
         
         return Response.ok(result).build();
     }
+    
+    @GET
+    @Path("arrayManipulation/{a}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response stringToArray(@PathParam("a") String number) {
+    	StringBuilder output = new StringBuilder();
+    	
+    	for(int i = 0; i<number.length(); i++) {
+    		output.append(number.charAt(i));
+    		if (i != number.length() - 1) {
+                output.append(",");
+            }
+    	}
+    	
+    	return Response.ok(output.toString()).build();
+    }
+    
+    
 }
